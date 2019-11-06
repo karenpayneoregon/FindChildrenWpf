@@ -72,7 +72,7 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="CanEnableTextBox.cs" />
+    <Compile Include="Controls\CanEnableTextBox.cs" />
     <Compile Include="Classes\Quarter.cs" />
     <Compile Include="Extensions\WindowHelpers.cs" />
     <Compile Include="MainWindow.xaml.cs">
