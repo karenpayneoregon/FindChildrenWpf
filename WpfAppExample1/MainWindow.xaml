@@ -18,18 +18,18 @@
                     </StackPanel>
                 </MenuItem.Header>
                 <MenuItem Header="Print Preview" HorizontalAlignment="Left" Width="160">
-                    <MenuItem Header="Quarter 1" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintPreviewSelected}" CommandParameter="1"/>
-                    <MenuItem Header="Quarter 2" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintPreviewSelected}" CommandParameter="2"/>
-                    <MenuItem Header="Quarter 3" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintPreviewSelected}" CommandParameter="3"/>
-                    <MenuItem Header="Quarter 4" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintPreviewSelected}" CommandParameter="4"/>
-                    <MenuItem Header="All Quarters" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintPreviewSelected}" CommandParameter="5"/>
+                    <MenuItem Header="Quarter 1" HorizontalAlignment="Left" Width="155"/>
+                    <MenuItem Header="Quarter 2" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="Quarter 3" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="Quarter 4" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="All Quarters" HorizontalAlignment="Left" Width="155"/>
                 </MenuItem>
                 <MenuItem Header="Print" HorizontalAlignment="Left" Width="160">
-                    <MenuItem Header="Quarter 1" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintSelected}" CommandParameter="1"/>
-                    <MenuItem Header="Quarter 2" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintSelected}" CommandParameter="2"/>
-                    <MenuItem Header="Quarter 3" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintSelected}" CommandParameter="3"/>
-                    <MenuItem Header="Quarter 4" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintSelected}" CommandParameter="4"/>
-                    <MenuItem Header="All Quarters" HorizontalAlignment="Left" Width="155" Command="{Binding MenuPrintSelected}" CommandParameter="5"/>
+                    <MenuItem Header="Quarter 1" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="Quarter 2" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="Quarter 3" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="Quarter 4" HorizontalAlignment="Left" Width="155" />
+                    <MenuItem Header="All Quarters" HorizontalAlignment="Left" Width="155" />
                 </MenuItem>
                 <MenuItem x:Name="Exit" Header="Exit" HorizontalAlignment="Left" Width="160" />
             </MenuItem>
@@ -51,8 +51,7 @@
                     <RowDefinition Height="Auto" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.ColumnSpan="7" Content="{Binding HeaderInfo.Header}"
-                   Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
+                <Label Grid.Row="0" Grid.ColumnSpan="7" Height="6" Content="" Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
                 <Label Grid.Row="1" Content="Audit Number:" Foreground="#5799FA"/>
                 <Label Grid.Row="1" Grid.Column="1" Content="1234"/>
                 <Label Grid.Row="1" Grid.Column="2" Content="Year:" Foreground="#5799FA"/>
@@ -127,97 +126,53 @@
                          Grid.Column="1" 
                          Margin="1,0,1,0" 
                          MaxLength="4"
+                         Text="{Binding Month01}"
         				 TextAlignment="Right" Tag="A" >
 
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
                 </TextBox>
-                <TextBox Grid.Row="3" Grid.Column="2" Margin="1,0,1,0" MaxLength="4" TextAlignment="Right" Tag="A" >
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+                <TextBox Grid.Row="3" 
+                         Grid.Column="2" 
+                         Margin="1,0,1,0" 
+                         MaxLength="4" 
+                         TextAlignment="Right" 
+                         Text="{Binding Month02}"
+                         Tag="A" >
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="3" Margin="1,0,1,0" MaxLength="4"
-                         TextAlignment="Right" Tag="A" 
-                         >
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+                         TextAlignment="Right" Tag="A" >
+
                 </TextBox>
 
                 <TextBox Grid.Row="3" Grid.Column="5" Margin="1,0,1,0" MaxLength="4"
-        				 TextAlignment="Right" Tag="A" 
-                         >
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+        				 TextAlignment="Right" Tag="A" >
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="6" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="7" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
 
                 <TextBox Grid.Row="3" Grid.Column="10" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="11" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="12" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
 
                 <TextBox Grid.Row="3" Grid.Column="14" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="15" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
                 <TextBox Grid.Row="3" Grid.Column="16" Margin="1,0,1,0" MaxLength="4" Tag="A">
-                    <intr:Interaction.Triggers>
-                        <intr:EventTrigger EventName="LostFocus">
-                            <intr:InvokeCommandAction Command="{Binding TextBoxLostFocus}" CommandParameter="{Binding RelativeSource={RelativeSource Self}}"/>
-                        </intr:EventTrigger>
-                    </intr:Interaction.Triggers>
+
                 </TextBox>
 
                 <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="1" Grid.ColumnSpan="3" Margin="0,2,0,0">
@@ -358,11 +313,11 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left" >
-                <Button Margin="5" x:Name="DisableTextBoxesButton" Width="110" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" Background="#FFF1F1DD" />
-                <Button Margin="5" x:Name="EnableTextBoxesButton" Width="110" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" />
-                <Button Margin="5" x:Name="EnableCheckBoxButton" Width="110" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" />
-                <Button Margin="5" x:Name="DisableCheckBoxButton" Width="110" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
-                <Button Margin="5" x:Name="CloseButton" Width="110" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <Button Margin="4.5" x:Name="DisableTextBoxesButton" Width="111" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" Background="#FFF1F1DD" />
+                <Button Margin="4.5" x:Name="EnableTextBoxesButton" Width="111" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" />
+                <Button Margin="4.5" x:Name="EnableCheckBoxButton" Width="111" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" />
+                <Button Margin="4.5" x:Name="DisableCheckBoxButton" Width="111" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
+                <Button Margin="4.5" x:Name="CloseButton" Width="111" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </StackPanel>
         </StackPanel>
 

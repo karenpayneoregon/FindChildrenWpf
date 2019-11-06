@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using WpfAppExample1.Extensions;
+using WpfAppExample1.Model;
 
 namespace WpfAppExample1
 {
@@ -25,7 +26,7 @@ namespace WpfAppExample1
         {
             InitializeComponent();
 
-            DataContext = this;
+            DataContext =  new MainViewModel() {Month01 = 12, Month02 = 11, Month03 = 33, Q1ExcessWage = 11};
             
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             WindowStyle = WindowStyle.ToolWindow;
