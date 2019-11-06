@@ -18,8 +18,25 @@ namespace WpfAppExample1.Classes
         public int Month08 { get; set; }
         public int Month09 { get; set; }
         public int Month10 { get; set; }
-        public int Month111 { get; set; }
+        public int Month11 { get; set; }
         public int Month12 { get; set; }
         public int Q1ExcessWage { get; set; }
+        public int Q1Supplemental { get; set; }
+        public int Q3Supplemental { get; set; }
+        public int Q1SubjectWage { get; set; }
+        public int Q2SubjectWage { get; set; }
+        public int Q3SubjectWage { get; set; }
+        public int Q4SubjectWage { get; set; }
+        public int Q2ExcessWage { get; set; }
+        public int Q3ExcessWage { get; set; }
+        public int Q4ExcessWage { get; set; }
+        public int Q1TaxableWage { get; set; }
+        public int Q2TaxableWage { get; set; }
+        public int Q3TaxableWage { get; set; }
+        public int Q4TaxableWage { get; set; }
+        public int Q1TaxDue { get; set; }
+        public int Q2TaxDue { get; set; }
+        public int Q3TaxDue { get; set; }
+        public int Q4TaxDue { get; set; }
     }
 }

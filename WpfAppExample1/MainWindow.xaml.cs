@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfAppExample1.Classes;
 using WpfAppExample1.Extensions;
 using WpfAppExample1.Model;
 
@@ -22,12 +23,22 @@ namespace WpfAppExample1
     /// </summary>
     public partial class MainWindow : Window
     {
+
         public MainWindow()
         {
             InitializeComponent();
 
-            DataContext =  new MainViewModel() {Month01 = 12, Month02 = 11, Month03 = 33, Q1ExcessWage = 11};
-            
+            var modView = new MainViewModel()
+            {
+                Quarter = new Quarter()
+                {
+                    Month01 = 1, Month02 = 2, Month03 = 3, Month04 = 4, Month05 =5, Month06 = 6,
+                    Month07 = 7, Month08 = 8, Month09 = 9, Month10 = 10, Month11 = 0, Month12 = 33
+                }
+            };
+            DataContext = modView;
+
+
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             WindowStyle = WindowStyle.ToolWindow;
         }
