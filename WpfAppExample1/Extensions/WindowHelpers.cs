@@ -80,7 +80,6 @@ namespace WpfAppExample1.Extensions
             }
         }
 
-
         public static IEnumerable<T> FindChildren<T>(DependencyObject dependencyItem) where T : DependencyObject
         {
             if (dependencyItem != null)

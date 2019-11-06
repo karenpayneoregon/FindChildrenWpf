@@ -8,7 +8,8 @@
         mc:Ignorable="d"
         Title="Form 136" Height="544" Width="620">
 
-    <DockPanel LastChildFill="False" Background="#F0F0F0" Height="579" VerticalAlignment="Top">
+
+<DockPanel LastChildFill="False" Background="#F0F0F0" Height="579" VerticalAlignment="Top">
         <Menu x:Name="menu" DockPanel.Dock="Top" VerticalAlignment="Top" Background="LightGray" Height="35">
             <MenuItem Height="35">
                 <MenuItem.Header>
@@ -356,13 +357,12 @@
 
             </Grid>
 
-            <!--<Button Margin="5" x:Name="Button1" Width="100" Content="Button1" HorizontalAlignment="Left" VerticalAlignment="Top" ></Button>
-            <Button Margin="5"  x:Name="Button2" Width="100" Content="Button2" HorizontalAlignment="Left" VerticalAlignment="Top" ></Button>-->
-            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="Auto" >
-                <Button Margin="5" x:Name="DisableTextBoxesButton" Width="110" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" ></Button>
-                <Button Margin="5" x:Name="EnableTextBoxesButton" Width="110" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" ></Button>
-                <Button Margin="5" x:Name="EnableCheckBoxButton" Width="110" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" ></Button>
-                <Button Margin="5" x:Name="DisableCheckBoxButton" Width="110" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click"></Button>
+            <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left" >
+                <Button Margin="5" x:Name="DisableTextBoxesButton" Width="110" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" Background="#FFF1F1DD" />
+                <Button Margin="5" x:Name="EnableTextBoxesButton" Width="110" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" />
+                <Button Margin="5" x:Name="EnableCheckBoxButton" Width="110" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" />
+                <Button Margin="5" x:Name="DisableCheckBoxButton" Width="110" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
+                <Button Margin="5" x:Name="CloseButton" Width="110" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </StackPanel>
         </StackPanel>
 

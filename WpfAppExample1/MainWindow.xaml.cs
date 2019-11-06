@@ -25,6 +25,8 @@ namespace WpfAppExample1
         {
             InitializeComponent();
 
+            DataContext = this;
+            
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             WindowStyle = WindowStyle.ToolWindow;
         }
