@@ -54,5 +54,15 @@ namespace WpfAppExample1
         {
             GridStackPanel.EnableTextBoxes<StackPanel>(false);
         }
+
+        private void DisableCheckBoxButton_Click(object sender, RoutedEventArgs e)
+        {
+            GridStackPanel.EnableCheckBoxes();
+        }
+
+        private void EnableCheckBoxButton_Click(object sender, RoutedEventArgs e)
+        {
+            GridStackPanel.EnableCheckBoxes(true);
+        }
     }
 }

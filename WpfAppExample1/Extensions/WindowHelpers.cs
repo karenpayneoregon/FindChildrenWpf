@@ -22,6 +22,19 @@ namespace WpfAppExample1.Extensions
             }
         }
         /// <summary>
+        /// Enable or disable all check boxes in a container
+        /// </summary>
+        /// <param name="control"></param>
+        /// <param name="enable"></param>
+        public static void EnableCheckBoxes(this DependencyObject control, bool enable = false)
+        {
+            foreach (var checkBox in FindChildren<CheckBox>(control))
+            {
+                checkBox.IsEnabled = enable;
+            }
+        }
+
+        /// <summary>
         /// Enable or disable a TextBox in a container 
         /// 
         /// If Tag = R (need a better indicator) this TextBox  IsReadOnly is excluded as it's
@@ -66,6 +79,7 @@ namespace WpfAppExample1.Extensions
                 }
             }
         }
+
 
         public static IEnumerable<T> FindChildren<T>(DependencyObject dependencyItem) where T : DependencyObject
         {

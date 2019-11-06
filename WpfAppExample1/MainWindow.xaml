@@ -242,7 +242,7 @@
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="3">
-                    <CheckBox VerticalAlignment="Center" IsChecked="{Binding form136.Q2Supplemental, Mode=TwoWay}"
+                    <CheckBox VerticalAlignment="Center" IsChecked="True"
                               Command="{Binding CheckBoxLostFocus}"/>
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
@@ -252,7 +252,7 @@
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="14" Grid.ColumnSpan="3">
-                    <CheckBox VerticalAlignment="Center" IsChecked="{Binding form136.Q4Supplemental, Mode=TwoWay}"
+                    <CheckBox VerticalAlignment="Center" IsChecked="True"
                               Command="{Binding CheckBoxLostFocus}"/>
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
@@ -361,6 +361,8 @@
             <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Width="Auto" >
                 <Button Margin="5" x:Name="DisableTextBoxesButton" Width="110" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" ></Button>
                 <Button Margin="5" x:Name="EnableTextBoxesButton" Width="110" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" ></Button>
+                <Button Margin="5" x:Name="EnableCheckBoxButton" Width="110" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" ></Button>
+                <Button Margin="5" x:Name="DisableCheckBoxButton" Width="110" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click"></Button>
             </StackPanel>
         </StackPanel>
 
