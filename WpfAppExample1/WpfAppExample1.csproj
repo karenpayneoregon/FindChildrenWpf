@@ -72,6 +72,8 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Classes\HeaderInfo.cs" />
+    <Compile Include="Classes\TaxRateInfo.cs" />
     <Compile Include="Controls\CanEnableTextBox.cs" />
     <Compile Include="Classes\Quarter.cs" />
     <Compile Include="Extensions\WindowHelpers.cs" />

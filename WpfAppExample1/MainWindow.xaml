@@ -63,7 +63,7 @@
                 <Label Grid.Row="2" Grid.Column="2" Content="APR:" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="3" Content="{Binding Quarter.HeaderInfo.TaxRateInfo.APR}"/>
                 <Label Grid.Row="2" Grid.Column="4" Content="Tax Rate(s):" Foreground="#5799FA"/>
-                <Label Grid.Row="2" Grid.Column="5" Content="{Binding Quarter.HeaderInfo.TaxRatesField}"/>
+                <Label Grid.Row="2" Grid.Column="5" Content="{Binding (model:MainViewModel.Quarter).HeaderInfo.TaxRatesField}"/>
             </Grid>
 
             <Separator Opacity="1" Height="1"/>

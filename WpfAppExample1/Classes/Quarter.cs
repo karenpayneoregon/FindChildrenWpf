@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -53,24 +52,5 @@ namespace WpfAppExample1.Classes
         public int Q4AmountDue { get; set; }
         public bool IsNotReadOnly { get; set; } = true;
         public HeaderInfo HeaderInfo { get; set; }
-    }
-
-    public class HeaderInfo
-    {
-        public HeaderInfo()
-        {
-            TaxRatesField = 3;
-            TaxRateInfo = new TaxRateInfo();
-
-        }
-        public int TaxRatesField { get; set; }
-        public int WageBase { get; set; } = 45;
-        public TaxRateInfo TaxRateInfo { get; set; }
-    }
-
-    public class TaxRateInfo
-    {
-        public int Year { get; set; } = DateTime.Now.Year -2;
-        public int APR { get; set; } = 9;
     }
 }
