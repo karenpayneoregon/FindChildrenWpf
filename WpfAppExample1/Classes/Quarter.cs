@@ -7,8 +7,12 @@ using System.Threading.Tasks;
 
 namespace WpfAppExample1.Classes
 {
+    /// <summary>
+    /// For Binding to Main View
+    /// </summary>
     public class Quarter
     {
+        public int AuditId { get; set; } = 90;
         public int Month01 { get; set; }
         public int Month02 { get; set; }
         public int Month03 { get; set; }
@@ -53,6 +57,19 @@ namespace WpfAppExample1.Classes
 
     public class HeaderInfo
     {
+        public HeaderInfo()
+        {
+            TaxRatesField = 3;
+            TaxRateInfo = new TaxRateInfo();
+
+        }
         public int TaxRatesField { get; set; }
+        public int WageBase { get; set; } = 45;
+        public TaxRateInfo TaxRateInfo { get; set; }
+    }
+
+    public class TaxRateInfo
+    {
+        public int Year { get; set; } = DateTime.Now.Year -2;
     }
 }

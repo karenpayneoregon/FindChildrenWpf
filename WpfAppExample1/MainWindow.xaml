@@ -9,10 +9,6 @@
         mc:Ignorable="d"
         Title="Form 136" Height="544" Width="620">
 
-    <Window.DataContext>
-        <model:MainViewModel/>
-    </Window.DataContext>
-
 
     <DockPanel LastChildFill="False" Background="#F0F0F0" Height="579" VerticalAlignment="Top">
         <Menu x:Name="menu" DockPanel.Dock="Top" VerticalAlignment="Top" Background="LightGray" Height="35">
@@ -58,18 +54,20 @@
 
                 <Label Grid.Row="0" Grid.ColumnSpan="7" Height="6" Content="" Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
                 <Label Grid.Row="1" Content="Audit Number:" Foreground="#5799FA"/>
-                <Label Grid.Row="1" Grid.Column="1" Content="1234"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Quarter.AuditId}"/>
                 <Label Grid.Row="1" Grid.Column="2" Content="Year:" Foreground="#5799FA"/>
-                <Label Grid.Row="1" Grid.Column="3" Content="2019"/>
+                <Label Grid.Row="1" Grid.Column="3" Content="{Binding Quarter.HeaderInfo.TaxRateInfo.Year}"/>
 
                 <Label Grid.Row="2" Content="Wage Base:" Foreground="#5799FA"/>
-                <Label Grid.Row="2" Grid.Column="1" Content="120"/>
+                <Label Grid.Row="2" Grid.Column="1" Content="{Binding Quarter.HeaderInfo.WageBase}" ContentStringFormat="{}{0:N0}"/>
                 <Label Grid.Row="2" Grid.Column="2" Content="APR:" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="3" Content="24"/>
                 <Label Grid.Row="2" Grid.Column="4" Content="Tax Rate(s):" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="5" Content="{Binding Quarter.HeaderInfo.TaxRatesField}"/>
             </Grid>
+
             <Separator Opacity="1" Height="1"/>
+
             <Grid x:Name="MainGrid" Background="#F0F0F0" IsEnabled="{Binding Quarter.IsNotReadOnly}">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="115"/>
@@ -91,6 +89,7 @@
                     <ColumnDefinition Width="Auto" />
                     <ColumnDefinition Width="*" />
                 </Grid.ColumnDefinitions>
+
                 <Grid.RowDefinitions>
                     <RowDefinition Height="Auto" />
                     <RowDefinition Height="Auto" />
@@ -116,9 +115,10 @@
                     <RowDefinition Height="Auto" MinHeight="5" />
                 </Grid.RowDefinitions>
 
-                <Label Grid.Row="0" Grid.ColumnSpan="18" Content="Form 136 - Consolidated Tax Report"
-                   Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
+                <Label Grid.Row="0" Grid.ColumnSpan="18" Content="Form 136 - Consolidated Tax Report" Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
+
                 <Separator Grid.Row="1" Opacity="0"/>
+
                 <Label Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="3" Content="Quarter 1" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="5" Grid.ColumnSpan="3" Content="Quarter 2" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="10" Grid.ColumnSpan="3" Content="Quarter 3" Foreground="#5799FA"/>
@@ -127,6 +127,7 @@
                 <TextBlock Grid.Row="3" Grid.RowSpan="2" Foreground="#5799FA" TextWrapping="WrapWithOverflow" Margin="15,0,0,0">
                     Number Of Covered Workers
                 </TextBlock>
+
                 <TextBox Grid.Row="3" Grid.Column="1" Margin="1,0,1,0" MaxLength="4" Text="{Binding Quarter.Month01 }" TextAlignment="Right" Tag="A" />
                 <TextBox Grid.Row="3" Grid.Column="2" Margin="1,0,1,0" MaxLength="4" TextAlignment="Right" Text="{Binding Quarter.Month02}" Tag="A" />
                 <TextBox Grid.Row="3" Grid.Column="3" Margin="1,0,1,0" MaxLength="4" TextAlignment="Right" Text="{Binding Quarter.Month03}" Tag="A" />
@@ -144,10 +145,12 @@
                     <Label Content="Total" Foreground="#5799FA" Margin="27,0,0,0"/>
                     <TextBox Width="40" Margin="0,0,0,0" Padding="0" Background="#F0F0F0" IsReadOnly="True" Tag="R"/>
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="5" Grid.ColumnSpan="3" Margin="0,2,0,0">
                     <Label Content="Total" Foreground="#5799FA" Margin="27,0,0,0"/>
                     <TextBox Width="40" Margin="0,0,0,0" Padding="0" Background="#F0F0F0" IsReadOnly="True" Tag="R"/>
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="4" Grid.Column="10" Grid.ColumnSpan="3" Margin="0,2,0,0">
                     <Label Content="Total" Foreground="#5799FA" Margin="27,0,0,0"/>
                     <TextBox Width="40" Margin="0,0,0,0" Padding="0" Background="#F0F0F0" IsReadOnly="True" Tag="R"/>
@@ -156,25 +159,33 @@
                     <Label Content="Total" Foreground="#5799FA" Margin="27,0,0,0"/>
                     <TextBox Width="40" Margin="0,0,0,0" Padding="0" Background="#F0F0F0" IsReadOnly="True" Tag="R"/>
                 </StackPanel>
+
                 <Separator Grid.Row="5" Opacity="0"/>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="1" Grid.ColumnSpan="3">
                     <CheckBox VerticalAlignment="Center" IsChecked="{Binding Quarter.Q1Supplemental, Mode=TwoWay}" />
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="5" Grid.ColumnSpan="3">
                     <CheckBox VerticalAlignment="Center" IsChecked="True" />
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="10" Grid.ColumnSpan="3">
                     <CheckBox VerticalAlignment="Center" IsChecked="{Binding Quarter.Q3Supplemental, Mode=TwoWay}" />
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
+
                 <StackPanel Orientation="Horizontal" Grid.Row="6" Grid.Column="14" Grid.ColumnSpan="3">
                     <CheckBox VerticalAlignment="Center" IsChecked="True" />
                     <Label Content="Supplemental?" Foreground="#5799FA"/>
                 </StackPanel>
+
                 <Separator Grid.Row="7" Opacity="0"/>
+
                 <Label Grid.Row="8" Content="Subject Wages" Foreground="#5799FA" Margin="15,0,0,0"/>
+
                 <TextBox Grid.Row="8" Grid.Column="1" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True" 
                          TextAlignment="Right" Text="{Binding Quarter.Q1SubjectWage, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="8" Grid.Column="5" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"
@@ -183,9 +194,11 @@
                          TextAlignment="Right" Text="{Binding Quarter.Q3SubjectWage, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="8" Grid.Column="14" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"
                          TextAlignment="Right" Text="{Binding Quarter.Q4SubjectWage, Mode=OneWay, StringFormat='n'}" Tag="R"/>
+                
                 <Separator Grid.Row="9" Opacity="0"/>
 
                 <Label Grid.Row="10" Content="Excess Wages" Foreground="#5799FA" Margin="15,0,0,0"/>
+
                 <TextBox Grid.Row="10" Grid.Column="1" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True" 
                          TextAlignment="Right" Text="{Binding Quarter.Q1ExcessWage, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="10" Grid.Column="5" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"
@@ -198,6 +211,7 @@
                 <Separator Grid.Row="11" Opacity="0"/>
 
                 <Label Grid.Row="12" Content="Taxable Wages" Foreground="#5799FA" Margin="15,0,0,0"/>
+
                 <TextBox Grid.Row="12" Grid.Column="1" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True" 
                          TextAlignment="Right" Text="{Binding Quarter.Q1TaxableWage, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="12" Grid.Column="5" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"
@@ -223,6 +237,7 @@
                 <Separator Grid.Row="15" Opacity="0"/>
 
                 <Label Grid.Row="16" Content="Interest" Foreground="#5799FA" Margin="15,0,0,0"/>
+
                 <TextBox Grid.Row="16" Grid.Column="1" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"  TextAlignment="Right" Text="{Binding Quarter.Q1Interest, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="16" Grid.Column="5" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True"  TextAlignment="Right" Text="{Binding Quarter.Q2Interest, Mode=OneWay, StringFormat='n'}" Tag="R"/>
                 <TextBox Grid.Row="16" Grid.Column="10" Grid.ColumnSpan="3" Background="#F0F0F0" IsReadOnly="True" TextAlignment="Right" Text="{Binding Quarter.Q3Interest, Mode=OneWay, StringFormat='n'}" Tag="R"/>
@@ -232,21 +247,10 @@
 
                 <Label Grid.Row="18" Content="Penalties" Foreground="#5799FA" Margin="15,0,0,0"/>
 
-                <TextBox Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="3" MaxLength="13" >
-
-                </TextBox>
-
-                <TextBox Grid.Row="18" Grid.Column="5" Grid.ColumnSpan="3" MaxLength="13" >
-
-                </TextBox>
-
-                <TextBox Grid.Row="18" Grid.Column="10" Grid.ColumnSpan="3" MaxLength="13" >
-
-                </TextBox>
-
-                <TextBox Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="3" MaxLength="13" >
-
-                </TextBox>
+                <TextBox Grid.Row="18" Grid.Column="1" Grid.ColumnSpan="3" MaxLength="13" />
+                <TextBox Grid.Row="18" Grid.Column="5" Grid.ColumnSpan="3" MaxLength="13" />
+                <TextBox Grid.Row="18" Grid.Column="10" Grid.ColumnSpan="3" MaxLength="13" />
+                <TextBox Grid.Row="18" Grid.Column="14" Grid.ColumnSpan="3" MaxLength="13" />
 
                 <Separator Grid.Row="19" Opacity="0"/>
 
@@ -271,6 +275,7 @@
                 <Button Margin="4.5" x:Name="DisableCheckBoxButton" Width="111" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
                 <Button Margin="4.5" x:Name="CloseButton" Width="111" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </StackPanel>
+
         </StackPanel>
 
     </DockPanel>
