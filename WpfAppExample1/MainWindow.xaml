@@ -61,7 +61,7 @@
                 <Label Grid.Row="2" Content="Wage Base:" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="1" Content="{Binding Quarter.HeaderInfo.WageBase}" ContentStringFormat="{}{0:N0}"/>
                 <Label Grid.Row="2" Grid.Column="2" Content="APR:" Foreground="#5799FA"/>
-                <Label Grid.Row="2" Grid.Column="3" Content="24"/>
+                <Label Grid.Row="2" Grid.Column="3" Content="{Binding Quarter.HeaderInfo.TaxRateInfo.APR}"/>
                 <Label Grid.Row="2" Grid.Column="4" Content="Tax Rate(s):" Foreground="#5799FA"/>
                 <Label Grid.Row="2" Grid.Column="5" Content="{Binding Quarter.HeaderInfo.TaxRatesField}"/>
             </Grid>
