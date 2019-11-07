@@ -28,16 +28,27 @@ namespace WpfAppExample1
         {
             InitializeComponent();
 
-            var modView = new MainViewModel()
+            var mainViewModel = new MainViewModel()
             {
                 Quarter = new Quarter()
                 {
-                    Month01 = 1, Month02 = 2, Month03 = 3, Month04 = 4, Month05 =5, Month06 = 6,
-                    Month07 = 7, Month08 = 8, Month09 = 9, Month10 = 10, Month11 = 0, Month12 = 33,
+                    Month01 = 1,
+                    Month02 = 2,
+                    Month03 = 3,
+                    Month04 = 4,
+                    Month05 =5,
+                    Month06 = 6,
+                    Month07 = 7,
+                    Month08 = 8,
+                    Month09 = 9,
+                    Month10 = 10,
+                    Month11 = 0,
+                    Month12 = 33,
                     HeaderInfo = new HeaderInfo() 
                 }
             };
-            DataContext = modView;
+
+            DataContext = mainViewModel;
 
 
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
