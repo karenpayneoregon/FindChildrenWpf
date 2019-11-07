@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -38,5 +39,20 @@ namespace WpfAppExample1.Classes
         public int Q2TaxDue { get; set; }
         public int Q3TaxDue { get; set; }
         public int Q4TaxDue { get; set; }
+        public int Q1Interest { get; set; }
+        public int Q2Interest { get; set; }
+        public int Q3Interest { get; set; }
+        public int Q4Interest { get; set; }
+        public int Q1AmountDue { get; set; }
+        public int Q2AmountDue { get; set; }
+        public int Q3AmountDue { get; set; }
+        public int Q4AmountDue { get; set; }
+        public bool IsNotReadOnly { get; set; } = true;
+        public HeaderInfo HeaderInfo { get; set; }
+    }
+
+    public class HeaderInfo
+    {
+        public int TaxRatesField { get; set; }
     }
 }
