@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:WpfAppExample1"
+        xmlns:local="clr-namespace:WpfAppExample1.ViewModel"
         xmlns:intr="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:model="clr-namespace:WpfAppExample1.ViewModel"
         mc:Ignorable="d"
@@ -12,8 +12,10 @@
 
 
     <Window.DataContext>
-        <model:QuarterViewModel/>
+        <local:QuarterViewModel/>
     </Window.DataContext>
+
+
 
     <DockPanel LastChildFill="False" Background="#F0F0F0" Height="579" VerticalAlignment="Top">
         <Menu x:Name="menu" DockPanel.Dock="Top" VerticalAlignment="Top" Background="LightGray" Height="35">

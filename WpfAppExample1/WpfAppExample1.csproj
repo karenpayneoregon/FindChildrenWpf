@@ -78,7 +78,6 @@
     <Compile Include="Classes\TaxRateInfo.cs" />
     <Compile Include="Controls\CanEnableTextBox.cs" />
     <Compile Include="Classes\Quarter.cs" />
-    <Compile Include="Extensions\WindowHelpers.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -113,6 +112,14 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj">
+      <Project>{5d0a0849-c695-4911-ae88-579a4c3d8750}</Project>
+      <Name>ExtensionMethods</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Extensions\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

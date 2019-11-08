@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.Specialized;
 using System.Linq;
 using System.Security.Policy;
 using System.Text;
@@ -9,7 +10,7 @@ namespace WpfAppExample1.Classes
     /// <summary>
     /// For Binding to Main View
     /// </summary>
-    public class Quarter
+    public class Quarter : INotifyCollectionChanged
     {
         public int AuditId { get; set; } = 90;
         public int Month01 { get; set; }
@@ -52,5 +53,6 @@ namespace WpfAppExample1.Classes
         public int Q4AmountDue { get; set; }
         public bool IsNotReadOnly { get; set; } = true;
         public HeaderInfo HeaderInfo { get; set; }
+        public event NotifyCollectionChangedEventHandler CollectionChanged;
     }
 }

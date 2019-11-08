@@ -11,7 +11,7 @@ namespace WpfAppExample1.ViewModel
 {
     public class QuarterViewModel : ViewModelBase
     {
-        public Quarter Quarter { get; private set; }
+        public Quarter Quarter { get; set; }
         public ObservableCollection<Quarter> QuarterList { get; set; }
 
         public QuarterViewModel()
