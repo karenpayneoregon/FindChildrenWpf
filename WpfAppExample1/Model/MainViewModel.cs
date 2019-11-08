@@ -10,5 +10,5 @@ namespace WpfAppExample1.Model
     public class MainViewModel
     {
         public Quarter Quarter { get; set; }
-    }
+     }
 }

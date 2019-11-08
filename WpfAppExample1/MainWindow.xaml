@@ -5,10 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample1"
         xmlns:intr="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-        xmlns:model="clr-namespace:WpfAppExample1.Model"
+        xmlns:model="clr-namespace:WpfAppExample1.ViewModel"
         mc:Ignorable="d"
         Title="Form 136" Height="544" Width="620">
 
+
+
+    <Window.DataContext>
+        <model:QuarterViewModel/>
+    </Window.DataContext>
 
     <DockPanel LastChildFill="False" Background="#F0F0F0" Height="579" VerticalAlignment="Top">
         <Menu x:Name="menu" DockPanel.Dock="Top" VerticalAlignment="Top" Background="LightGray" Height="35">
@@ -54,6 +59,7 @@
 
                 <Label Grid.Row="0" Grid.ColumnSpan="7" Height="6" Content="" Background="#99B4D1" FontWeight="Bold" FontSize="14"/>
                 <Label Grid.Row="1" Content="Audit Number:" Foreground="#5799FA"/>
+                <Label Grid.Row="1" Grid.Column="1" Content="{Binding Quarter.AuditId}"/>
                 <Label Grid.Row="1" Grid.Column="1" Content="{Binding Quarter.AuditId}"/>
                 <Label Grid.Row="1" Grid.Column="2" Content="Year:" Foreground="#5799FA"/>
                 <Label Grid.Row="1" Grid.Column="3" Content="{Binding Quarter.HeaderInfo.TaxRateInfo.Year}"/>
