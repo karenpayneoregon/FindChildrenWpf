@@ -292,7 +292,7 @@
                 <Button Margin="4.5" x:Name="EnableTextBoxesButton" Width="111" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" />
                 <Button Margin="4.5" x:Name="EnableCheckBoxButton" Width="111" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" />
                 <Button Margin="4.5" x:Name="DisableCheckBoxButton" Width="111" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
-                <Button Margin="4.5" x:Name="CloseButton" Width="111" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
+                <Button Margin="4.5" x:Name="CloseButton" Width="111" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" Click="CloseButton_Click" />
             </StackPanel>
 
 

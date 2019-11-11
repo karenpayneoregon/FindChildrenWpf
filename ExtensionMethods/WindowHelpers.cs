@@ -105,37 +105,67 @@ namespace ExtensionMethods
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<TextBox> TextBoxList(this DependencyObject control) => Descendants<TextBox>(control).ToList();
+        public static List<TextBox> TextBoxList(this DependencyObject control) => 
+            Descendants<TextBox>(control).ToList();
+
         /// <summary>
         /// Get all TextBoxBlock controls in a container
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<TextBlock> TextBoxBlockList(this DependencyObject control) => Descendants<TextBlock>(control).ToList();
+        public static List<TextBlock> TextBoxBlockList(this DependencyObject control) => 
+            Descendants<TextBlock>(control).ToList();
+
         /// <summary>
         /// Get all CheckBox controls in a container
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<CheckBox> CheckBoxList(this DependencyObject control) => Descendants<CheckBox>(control).ToList();
+        public static List<CheckBox> CheckBoxList(this DependencyObject control) => 
+            Descendants<CheckBox>(control).ToList();
+
+        /// <summary>
+        /// Get all checked CheckBox controls in a container
+        /// </summary>
+        /// <param name="control"></param>
+        /// <returns></returns>
+        public static List<CheckBox> CheckBoxListChecked(this DependencyObject control) => 
+            control.CheckBoxList().Where(checkBox => checkBox.IsChecked == true).ToList();
+
+        /// <summary>
+        /// Determine if any CheckBoxes are checked in container
+        /// </summary>
+        /// <param name="control"></param>
+        /// <returns></returns>
+        public static bool CheckListAnyChecked(this DependencyObject control)
+        {
+            return control.CheckBoxListChecked().Any();
+        }
+
         /// <summary>
         /// Get all ComboBox controls in a container
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<ComboBox> ComboBoxList(this DependencyObject control) => Descendants<ComboBox>(control).ToList();
+        public static List<ComboBox> ComboBoxList(this DependencyObject control) => 
+            Descendants<ComboBox>(control).ToList();
+
         /// <summary>
         /// Get all RadioButton controls in container
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<RadioButton> RadioList(this DependencyObject control) => Descendants<RadioButton>(control).ToList();
+        public static List<RadioButton> RadioList(this DependencyObject control) => 
+            Descendants<RadioButton>(control).ToList();
+
         /// <summary>
         /// Get all checked RadioButton controls that are checked
         /// </summary>
         /// <param name="control"></param>
         /// <returns></returns>
-        public static List<RadioButton> RadioListAreChecked(this DependencyObject control) => Descendants<RadioButton>(control).Where(radioButton => radioButton.IsChecked == true).ToList();
+        public static List<RadioButton> RadioListAreChecked(this DependencyObject control) => 
+            Descendants<RadioButton>(control).Where(radioButton => radioButton.IsChecked == true).ToList();
+
         /// <summary>
         /// Get selected RadioButton in a specific group
         /// </summary>

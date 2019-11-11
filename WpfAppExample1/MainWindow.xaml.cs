@@ -79,5 +79,10 @@ namespace WpfAppExample1
         {
             GridStackPanel.EnableCheckBoxesSpecial(false, "ToggleCheckBox");
         }
+
+        private void CloseButton_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
+        }
     }
 }

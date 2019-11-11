@@ -15,9 +15,6 @@ using ExtensionMethods;
 
 namespace WpfAppExample1
 {
-    /// <summary>
-    /// Interaction logic for RadioButtonWindow.xaml
-    /// </summary>
     public partial class RadioButtonWindow : Window
     {
         public RadioButtonWindow()
