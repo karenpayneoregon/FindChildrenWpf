@@ -48,7 +48,9 @@ namespace WpfAppExample1
         /// <param name="e"></param>
         private void GetCheckedRadioButtonsByGroupName_Click(object sender, RoutedEventArgs e)
         {
-            var selectedOperatingSystem = Stacker1.SelectedRadioButtonInGroup("OperatingSystemGroup");
+            var selectedOperatingSystem = Stacker1
+                .SelectedRadioButtonInGroup("OperatingSystemGroup");
+
             MessageBox.Show($"Operating system is {selectedOperatingSystem.Content}");
         }
     }

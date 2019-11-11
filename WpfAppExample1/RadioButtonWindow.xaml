@@ -5,24 +5,66 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample1"
         mc:Ignorable="d"
-        Title="Radio Buttons" Height="225" Width="314" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="Radio Buttons" 
+        Height="225" 
+        Width="314" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="ToolWindow">
     <Grid>
+        
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="13*"/>
             <ColumnDefinition Width="5*"/>
         </Grid.ColumnDefinitions>
+
         <Border Padding="10" Grid.ColumnSpan="2">
             <StackPanel x:Name="Stacker1">
-                <RadioButton x:Name="Windows8RadioButton" GroupName="OperatingSystemGroup" Content="Windows 8" IsChecked="True"/>
-                <RadioButton x:Name="Windows7RadioButton" GroupName="OperatingSystemGroup" Content="Windows 7" />
-                <RadioButton x:Name="Windows10RadioButton" GroupName="OperatingSystemGroup" Content="Windows 10" />
-                <RadioButton x:Name="Office2007RadioButton" GroupName="OfficeGroup" Content="Microsoft Office 2007" IsChecked="True"/>
-                <RadioButton x:Name="Office2010RadioButton" GroupName="OfficeGroup" Content="Microsoft Office 2010"/>
-                <RadioButton x:Name="OpenOfficeRadioButton" GroupName="OfficeGroup" Content="Open Office"/>
+
+                <RadioButton x:Name="Windows8RadioButton" 
+                             GroupName="OperatingSystemGroup" 
+                             Content="Windows 8" 
+                             IsChecked="True"/>
+
+                <RadioButton x:Name="Windows7RadioButton" 
+                             GroupName="OperatingSystemGroup" 
+                             Content="Windows 7" />
+
+                <RadioButton x:Name="Windows10RadioButton" 
+                             GroupName="OperatingSystemGroup" 
+                             Content="Windows 10" />
+
+                <RadioButton x:Name="Office2007RadioButton" 
+                             GroupName="OfficeGroup" 
+                             Content="Microsoft Office 2007" 
+                             IsChecked="True"/>
+
+                <RadioButton x:Name="Office2010RadioButton" 
+                             GroupName="OfficeGroup" 
+                             Content="Microsoft Office 2010"/>
+
+                <RadioButton x:Name="OpenOfficeRadioButton" 
+                             GroupName="OfficeGroup" 
+                             Content="Open Office"/>
+
             </StackPanel>
         </Border>
 
-        <Button x:Name="GetCheckedRadioButtons" Content="Radio button list" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="10,120,0,0" Click="GetCheckedRadioButtons_Click"/>
-        <Button x:Name="GetCheckedRadioButtonsByGroupName" Content="Selected by group" HorizontalAlignment="Left" VerticalAlignment="Top" Width="137" Margin="10,147,0,0" Click="GetCheckedRadioButtonsByGroupName_Click"/>
+        <Button Grid.Column="0" 
+                x:Name="GetCheckedRadioButtons" 
+                Content="Radio button list" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="137" 
+                Margin="10,120,0,0" 
+                Click="GetCheckedRadioButtons_Click"/>
+
+        <Button Grid.Column="0" 
+                x:Name="GetCheckedRadioButtonsByGroupName" 
+                Content="Selected by group" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="137" Margin="10,147,0,0" 
+                Click="GetCheckedRadioButtonsByGroupName_Click"/>
+
     </Grid>
 </Window>

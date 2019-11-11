@@ -24,11 +24,20 @@ namespace WpfAppExample1
 
         private void GetCheckedButton_Click(object sender, RoutedEventArgs e)
         {
-            if (CheckBoxGrid.CheckListAnyChecked())
+            var checkBoxes = CheckBoxGrid.CheckBoxListChecked();
+            if (checkBoxes.Any(cb => cb.IsChecked == true))
             {
-                var result = string.Join("\n",CheckBoxGrid.CheckBoxListChecked().Select(cb => cb.Content.ToString()).ToArray());
+                var result = string.Join("\n",
+                    checkBoxes
+                        .Select(cb => cb.Content.ToString())
+                        .ToArray());
+
                 MessageBox.Show($"Selected languages\n{result}");
 
+            }
+            else
+            {
+                MessageBox.Show("Nothing has been selected.");
             }
         }
     }

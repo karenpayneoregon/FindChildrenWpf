@@ -14,7 +14,6 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using ExtensionMethods;
 using WpfAppExample1.Classes;
-//using WpfAppExample1.Extensions;
 using WpfAppExample1.Model;
 
 

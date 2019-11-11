@@ -5,12 +5,48 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample1"
         mc:Ignorable="d"
-        Title="CheckBoxes" Height="227.571" Width="206" WindowStartupLocation="CenterScreen" WindowStyle="ToolWindow">
+        Title="CheckBoxes" 
+        Height="227.571" 
+        Width="206" 
+        WindowStartupLocation="CenterScreen" 
+        WindowStyle="ToolWindow">
+
     <Grid Name="CheckBoxGrid">
-        <CheckBox Content="C#" Height="16" HorizontalAlignment="Left" Margin="20,20,0,0" Name="sharpCheckBox" VerticalAlignment="Top" />
-        <CheckBox Content="VB.NET" Height="16" HorizontalAlignment="Left" Margin="20,51,0,0" Name="VisualBasicCheckBox" VerticalAlignment="Top" />
-        <CheckBox Content="F#" Height="16" HorizontalAlignment="Left" Margin="20,85,0,0" Name="functionCheckBox" VerticalAlignment="Top" />
-        <CheckBox Content="None" Height="16" HorizontalAlignment="Left" Margin="20,119,0,0" Name="NoneCheckBox" VerticalAlignment="Top" />
-        <Button x:Name="GetCheckedButton" Content="Get checked" HorizontalAlignment="Left" VerticalAlignment="Top" Width="150" Margin="20,156,0,0" Click="GetCheckedButton_Click"/>
+        <CheckBox Content="C#" 
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  Margin="20,20,0,0" 
+                  Name="sharpCheckBox" 
+                  VerticalAlignment="Top" />
+
+        <CheckBox Content="VB.NET" 
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  Margin="20,51,0,0" 
+                  Name="VisualBasicCheckBox" 
+                  VerticalAlignment="Top" />
+
+        <CheckBox Content="F#" 
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  Margin="20,85,0,0" 
+                  Name="functionCheckBox" 
+                  VerticalAlignment="Top" />
+
+        <CheckBox Content="None" 
+                  Height="16" 
+                  HorizontalAlignment="Left" 
+                  Margin="20,119,0,0" 
+                  Name="NoneCheckBox" 
+                  VerticalAlignment="Top" />
+
+        <Button x:Name="GetCheckedButton" 
+                Content="Get checked" 
+                HorizontalAlignment="Left" 
+                VerticalAlignment="Top" 
+                Width="150" 
+                Margin="20,156,0,0" 
+                Click="GetCheckedButton_Click"/>
+
     </Grid>
 </Window>
