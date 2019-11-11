@@ -12,6 +12,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExtensionMethods", "ExtensionMethods\ExtensionMethods.csproj", "{5D0A0849-C695-4911-AE88-579A4C3D8750}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Windows Forms", "Windows Forms", "{78847106-E333-4E41-B2FE-31F09D8A54A8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlExtensions", "ControlExtensions\ControlExtensions.csproj", "{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{9BF772A8-0216-4C97-A8AD-2AFAEB0D72BE}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -26,9 +32,18 @@ Global
 		{5D0A0849-C695-4911-AE88-579A4C3D8750}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5D0A0849-C695-4911-AE88-579A4C3D8750}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5D0A0849-C695-4911-AE88-579A4C3D8750}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{FFA9C1EF-7525-43BC-A08D-1BF09A8F4DAD} = {9BF772A8-0216-4C97-A8AD-2AFAEB0D72BE}
+		{5D0A0849-C695-4911-AE88-579A4C3D8750} = {9BF772A8-0216-4C97-A8AD-2AFAEB0D72BE}
+		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F} = {78847106-E333-4E41-B2FE-31F09D8A54A8}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {F15C3DCC-D165-475B-B9F8-513BFCF9334F}

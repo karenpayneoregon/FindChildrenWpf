@@ -174,7 +174,8 @@ namespace ExtensionMethods
         /// <returns></returns>
         public static RadioButton SelectedRadioButtonInGroup(this DependencyObject control, string groupName) => 
             Descendants<RadioButton>(control)
-                .FirstOrDefault(radioButton => radioButton.IsChecked == true && radioButton.GroupName == groupName);
+                .FirstOrDefault(radioButton => 
+                    radioButton.IsChecked == true && radioButton.GroupName == groupName);
 
         public static IEnumerable<T> Descendants<T>(DependencyObject dependencyItem) where T : DependencyObject
         {
