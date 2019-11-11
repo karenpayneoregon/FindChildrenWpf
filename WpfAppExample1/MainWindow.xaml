@@ -7,7 +7,8 @@
         xmlns:intr="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
         xmlns:model="clr-namespace:WpfAppExample1.ViewModel"
         mc:Ignorable="d"
-        Title="Form 136" Height="544" Width="620">
+        x:Name="Window1"
+        Title="Form 136" Height="566.5" Width="620">
 
 
 
@@ -42,7 +43,7 @@
                 <MenuItem x:Name="Exit" Header="Exit" HorizontalAlignment="Left" Width="160" />
             </MenuItem>
         </Menu>
-        <StackPanel x:Name="GridStackPanel" Orientation="Vertical" Margin="0,0,0,71">
+        <StackPanel x:Name="GridStackPanel" Orientation="Vertical" Margin="0,0,0,33">
             <Grid Background="#F0F0F0" Width="609">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="Auto"/>
@@ -277,12 +278,24 @@
             </Grid>
 
             <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left" >
+
+                <CheckBox Margin="10"
+                          x:Name="ToggleCheckBox"
+                          Checked="ToggleCheckBox_Checked" Unchecked="ToggleCheckBox_Unchecked">
+                    Artificial trigger simulation.
+                </CheckBox>
+
+            </StackPanel>
+
+            <StackPanel Orientation="Horizontal" Width="Auto" HorizontalAlignment="Left" >
                 <Button Margin="4.5" x:Name="DisableTextBoxesButton" Width="111" Content="Disable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableTextBoxesButton_Click" Background="#FFF1F1DD" />
                 <Button Margin="4.5" x:Name="EnableTextBoxesButton" Width="111" Content="Enable TextBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableTextBoxesButton_Click" />
                 <Button Margin="4.5" x:Name="EnableCheckBoxButton" Width="111" Content="Enable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="EnableCheckBoxButton_Click" />
                 <Button Margin="4.5" x:Name="DisableCheckBoxButton" Width="111" Content="Disable CheckBoxes" HorizontalAlignment="Left" VerticalAlignment="Top" Click="DisableCheckBoxButton_Click" Background="#FFF1F1DD" />
                 <Button Margin="4.5" x:Name="CloseButton" Width="111" Content="Exit" HorizontalAlignment="Left" VerticalAlignment="Top" />
             </StackPanel>
+
+
 
         </StackPanel>
 

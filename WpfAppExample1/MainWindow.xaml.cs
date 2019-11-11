@@ -12,8 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ExtensionMethods;
 using WpfAppExample1.Classes;
-using WpfAppExample1.Extensions;
 //using WpfAppExample1.Extensions;
 using WpfAppExample1.Model;
 
@@ -62,12 +62,22 @@ namespace WpfAppExample1
 
         private void DisableCheckBoxButton_Click(object sender, RoutedEventArgs e)
         {
-            GridStackPanel.EnableCheckBoxes();
+            GridStackPanel.EnableCheckBoxesSpecial(false, "ToggleCheckBox");
         }
 
         private void EnableCheckBoxButton_Click(object sender, RoutedEventArgs e)
         {
             GridStackPanel.EnableCheckBoxes(true);
+        }
+
+        private void ToggleCheckBox_Checked(object sender, RoutedEventArgs e)
+        {
+            GridStackPanel.EnableCheckBoxesSpecial(true, "ToggleCheckBox");
+        }
+
+        private void ToggleCheckBox_Unchecked(object sender, RoutedEventArgs e)
+        {
+            GridStackPanel.EnableCheckBoxesSpecial(false, "ToggleCheckBox");
         }
     }
 }
