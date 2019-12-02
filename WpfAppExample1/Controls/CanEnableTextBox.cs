@@ -1,15 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows;
+﻿using System.Windows;
 using System.Windows.Controls;
 
-namespace WpfAppExample1
+namespace WpfAppExample1.Controls
 {
     public class CanEnableTextBox : TextBox
     {
+
         static CanEnableTextBox()
         {
             IsEnabledProperty.OverrideMetadata(typeof(CanEnableTextBox),

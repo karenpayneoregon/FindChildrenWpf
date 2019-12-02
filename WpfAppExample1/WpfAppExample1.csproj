@@ -43,6 +43,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
     </Reference>
@@ -70,6 +71,9 @@
     <Compile Include="RadioButtonWindow.xaml.cs">
       <DependentUpon>RadioButtonWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="SelectiveReadOnlyWindow.xaml.cs">
+      <DependentUpon>SelectiveReadOnlyWindow.xaml</DependentUpon>
+    </Compile>
     <Compile Include="ViewModel\QuarterViewModel.cs" />
     <Compile Include="ViewModel\BaseClasses\ViewModelBase.cs" />
     <Page Include="CheckBoxWindow.xaml">
@@ -93,6 +97,10 @@
       <SubType>Code</SubType>
     </Compile>
     <Page Include="RadioButtonWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SelectiveReadOnlyWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -134,6 +142,9 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\Check.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
