@@ -32,7 +32,7 @@ namespace WpfAppExample1
                 if (code == 123)
                 {
                     GroupGrid.IsEnabled = true;
-                    CodeImage.Visibility = Visibility.Visible;
+                    //CodeImage.Visibility = Visibility.Visible;
                 }
             }
         }
