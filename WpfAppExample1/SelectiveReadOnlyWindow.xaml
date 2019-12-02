@@ -9,6 +9,7 @@
         Title="Selective Read Only" Height="228" Width="297" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
 
     <Window.Resources>
+        <!--style for watermark/cue banner-->
         <Style x:Key="WaterMarkStyle" TargetType="{x:Type TextBox}">
             <Setter Property="Template">
                 <Setter.Value>
@@ -52,18 +53,8 @@
             <RowDefinition Height="57"/>
         </Grid.RowDefinitions>
 
-        <GroupBox x:Name="GroupGrid"
-            Header="New user"
-            HorizontalAlignment="Left"
-            Margin="13,17,0,0"
-            VerticalAlignment="Top"
-            Height="125"
-            Width="249" Grid.ColumnSpan="2" IsEnabled="False">
-            <Grid 
-                HorizontalAlignment="Left"
-                Height="100"
-                VerticalAlignment="Top"
-                Width="229" Margin="0,25,0,-22">
+        <GroupBox x:Name="GroupGrid" Header="New user" HorizontalAlignment="Left" Margin="13,17,0,0" VerticalAlignment="Top" Height="125" Width="249" Grid.ColumnSpan="2" IsEnabled="False">
+            <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="229" Margin="0,25,0,-22">
 
                 <Grid.Resources>
                     <Style TargetType="{x:Type TextBox}">
@@ -84,8 +75,10 @@
 
                 <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,5,0" Width="22">First</TextBlock>
                 <TextBox Grid.Column="1" Grid.Row="0"/>
+
                 <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0" Width="21">Last</TextBlock>
                 <TextBox Grid.Column="1" Grid.Row="1"></TextBox>
+
                 <controls:CanEnableTextBox Grid.Column="1" HorizontalAlignment="Left" Height="16" Grid.Row="2" VerticalAlignment="Top" Width="86" Style="{StaticResource WaterMarkStyle}" Tag="Enter code" TextChanged="InviteCodeButton_TextChanged" Margin="0,6,0,0"  />
                 <Image x:Name="CodeImage" Source="Images/Check.png" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="91,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="16" IsEnabled="False">
                     <Image.Style>
@@ -103,7 +96,7 @@
             </Grid>
         </GroupBox>
 
-        <Button Content="Button" 
+        <Button Content="Submit" 
                 Grid.Row="1" 
                 Grid.Column="0"
                 HorizontalAlignment="Left" 
@@ -112,7 +105,7 @@
                 Width="89" 
                 Grid.ColumnSpan="2"/>
 
-        <Button Content="Button" 
+        <Button Content="Cancel" 
                 Grid.Column="1" 
                 Grid.Row="1" 
                 HorizontalAlignment="Left" 
