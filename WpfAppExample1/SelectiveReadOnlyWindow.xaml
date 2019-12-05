@@ -59,7 +59,15 @@
             <RowDefinition Height="57"/>
         </Grid.RowDefinitions>
 
-        <GroupBox x:Name="GroupGrid" Header="New user" HorizontalAlignment="Left" Margin="13,17,0,0" VerticalAlignment="Top" Height="125" Width="258" Grid.ColumnSpan="2" IsEnabled="False">
+        <GroupBox x:Name="GroupGrid" 
+                  Header="New user" 
+                  HorizontalAlignment="Left" 
+                  Margin="13,17,0,0" 
+                  VerticalAlignment="Top" 
+                  Height="125" Width="258" 
+                  Grid.ColumnSpan="2" 
+                  IsEnabled="False">
+
             <Grid HorizontalAlignment="Left" Height="100" VerticalAlignment="Top" Width="229" Margin="0,25,0,-22">
 
                 <Grid.Resources>

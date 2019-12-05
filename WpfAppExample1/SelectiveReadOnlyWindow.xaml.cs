@@ -63,7 +63,11 @@ namespace WpfAppExample1
                 GroupGrid.IsEnabled = false;
             }
         }
-
+        /// <summary>
+        /// This is were the verification process would be completed.
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void SubmitButton_Click(object sender, RoutedEventArgs e)
         {
             MessageBox.Show("Submitted");
