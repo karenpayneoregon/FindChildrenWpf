@@ -20,7 +20,7 @@ namespace WpfAppExample1
 
     public partial class SelectiveReadOnlyWindow : Window
     {
-        private MockedData _mockedData = new MockedData();
+        private readonly MockedData _mockedData = new MockedData();
 
         public SelectiveReadOnlyWindow()
         {
@@ -42,6 +42,9 @@ namespace WpfAppExample1
 
             var person = _mockedData.FindPerson(Convert.ToInt32(((TextBox) sender).Text));
 
+            /*
+             * -1 means the person was not located
+             */
             if (person.Id > -1)
             {
                 // Enabling group enables child controls
@@ -59,6 +62,11 @@ namespace WpfAppExample1
             {
                 GroupGrid.IsEnabled = false;
             }
+        }
+
+        private void SubmitButton_Click(object sender, RoutedEventArgs e)
+        {
+            MessageBox.Show("Submitted");
         }
     }
 }

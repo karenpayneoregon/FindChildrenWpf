@@ -129,37 +129,27 @@
                         <Style TargetType="{x:Type Image}">
                             <Setter Property="Visibility" Value="Hidden" />
                             <Style.Triggers>
-                                <DataTrigger Binding="{Binding IsEnabled, ElementName=GroupGrid}" Value="true">
+                                <DataTrigger Binding="{Binding IsEnabled, ElementName=GroupGrid}" Value="True">
                                     <Setter Property="Visibility" Value="Visible" />
                                 </DataTrigger>
                             </Style.Triggers>
                         </Style>
                     </Image.Style>
                 </Image>
-
-                <!--<TextBox Grid.Row="1" Grid.Column="0">
-                    <TextBox.Style>
-                        <Style>
-                            <Style.Triggers>
-                                <DataTrigger Binding="{Binding ElementName=GroupGrid, Path=IsEnabled}" Value="true"> 
-                                    <Setter Property="TextBox.Text" Value="Tomato"/>
-
-                                </DataTrigger>
-                            </Style.Triggers>
-                        </Style>
-                    </TextBox.Style>
-                </TextBox>-->
             </Grid>
         </GroupBox>
 
-        <Button Content="Submit" 
-                Grid.Row="1" 
-                Grid.Column="0"
-                HorizontalAlignment="Left" 
-                VerticalAlignment="Top" 
-                Margin="10,11,0,0" 
-                Width="89" 
-                Grid.ColumnSpan="2"/>
+        <Button x:Name="SubmitButton" Content="Submit" Grid.Row="1" Grid.Column="0" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,11,0,0" Width="89" Grid.ColumnSpan="2" Click="SubmitButton_Click">
+            <Button.Style>
+                <Style>
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding ElementName=GroupGrid, Path=IsEnabled}" Value="False">
+                            <Setter Property="Button.IsEnabled" Value="False" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </Button.Style>
+        </Button>
 
         <Button Content="Cancel" 
                 Grid.Column="1" 
