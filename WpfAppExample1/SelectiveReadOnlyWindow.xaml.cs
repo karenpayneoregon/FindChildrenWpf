@@ -12,41 +12,57 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using ExtensionMethods;
+using WpfAppExample1.Classes;
 
 namespace WpfAppExample1
 {
-    /// <summary>
-    /// Interaction logic for SelectiveReadOnlyWindow.xaml
-    /// </summary>
+
     public partial class SelectiveReadOnlyWindow : Window
     {
+        private MockedData _mockedData = new MockedData();
+
         public SelectiveReadOnlyWindow()
         {
             InitializeComponent();
         }
 
-        private void InviteCodeButton_TextChanged(object sender, TextChangedEventArgs e)
+        private void OnLoad(object sender, RoutedEventArgs e)
         {
-            var userText = ((TextBox) sender).Text;
-            if (int.TryParse(userText, out var code))
+            var verifyTextBox = this.EnableFirst<TextBox>();
+            if (verifyTextBox !=null)
             {
-                if (code == 123)
-                {
-                    GroupGrid.IsEnabled = true;
-                    // Alternate to using xaml trigger
-                    //CodeImage.Visibility = Visibility.Visible;
-                }
+                FocusManager.SetFocusedElement(this, verifyTextBox);
             }
         }
-        /// <summary>
-        /// Ensures only numbers for the code verification TextBox
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void NumberValidationTextBox(object sender, TextCompositionEventArgs e)
+
+        private void InviteCodeButton_TextChanged(object sender, TextChangedEventArgs e)
         {
-            var regex = new Regex("[^0-9]+");
-            e.Handled = regex.IsMatch(e.Text);
+
+            if (!string.IsNullOrWhiteSpace(((TextBox) sender).Text))
+            {
+                var person = _mockedData.FindPerson(Convert.ToInt32(((TextBox) sender).Text));
+
+                if (person.Id > -1)
+                {
+                    // Enabling group enables child controls
+                    GroupGrid.IsEnabled = true;
+
+                    // This will automatically select the first control in the tab order
+                    MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+
+                    FirstNameTextBox.Text = person.FirstName;
+                    LastNameTextBox.Text = person.LastName;
+
+                    FirstNameTextBox.Select(person.FirstName.Length, 0);
+                }
+                else
+                {
+                    FirstNameTextBox.Text = "";
+                    LastNameTextBox.Text = "";
+                    GroupGrid.IsEnabled = false;
+                }
+            }
         }
     }
 }

@@ -5,8 +5,14 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample1"
         xmlns:controls="clr-namespace:WpfAppExample1.Controls"
+        xmlns:classes="clr-namespace:WpfAppExample1.Classes"
         mc:Ignorable="d"
-        Title="Selective Read Only" Height="228" Width="297" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="Selective Read Only" 
+        Height="228" 
+        Width="297" 
+        WindowStartupLocation="CenterScreen" 
+        Loaded="OnLoad"
+        ResizeMode="NoResize">
 
     <Window.Resources>
         <!--style for watermark/cue banner-->
@@ -74,12 +80,12 @@
                 </Grid.ColumnDefinitions>
 
                 <TextBlock Grid.Column="0" Grid.Row="0" HorizontalAlignment="Right" Margin="0,0,5,0" Width="22">First</TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="0"/>
+                <TextBox x:Name="FirstNameTextBox" Grid.Column="1" Grid.Row="0"/>
 
                 <TextBlock Grid.Column="0" Grid.Row="1" HorizontalAlignment="Right" Margin="0,0,5,0" Width="21">Last</TextBlock>
-                <TextBox Grid.Column="1" Grid.Row="1"></TextBox>
+                <TextBox x:Name="LastNameTextBox" Grid.Column="1" Grid.Row="1"></TextBox>
 
-                <controls:CanEnableTextBox Grid.Column="1" HorizontalAlignment="Left" Height="16" Grid.Row="2" VerticalAlignment="Top" Width="86" Style="{StaticResource WaterMarkStyle}" Tag="Enter code" TextChanged="InviteCodeButton_TextChanged" PreviewTextInput="NumberValidationTextBox" Margin="0,6,0,0"  />
+                <controls:CanEnableTextBox local:NumberOnlyBehaviour.IsEnabled="True"  Grid.Column="1" HorizontalAlignment="Left" Height="16" Grid.Row="2" VerticalAlignment="Top" Width="86" Style="{StaticResource WaterMarkStyle}" Tag="Enter code" TextChanged="InviteCodeButton_TextChanged"  Margin="0,6,0,0"  />
                 <Image x:Name="CodeImage" Source="Images/Check.png" Grid.Column="1" HorizontalAlignment="Left" Height="16" Margin="91,6,0,0" Grid.Row="2" VerticalAlignment="Top" Width="16" IsEnabled="False">
                     <Image.Style>
                         <Style TargetType="{x:Type Image}">

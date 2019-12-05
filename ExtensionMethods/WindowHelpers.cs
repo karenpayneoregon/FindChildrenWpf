@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
@@ -79,6 +80,16 @@ namespace ExtensionMethods
                     new SolidColorBrush(Color.FromArgb(255, 240, 240, 240)): 
                     Brushes.White;
             }
+        }
+        /// <summary>
+        /// Obtain the first enabled of T.
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="control"></param>
+        /// <returns></returns>
+        public static TextBox EnableFirst<T>(this DependencyObject control)
+        {
+            return Descendants<TextBox>(control).FirstOrDefault(item => item.IsEnabled == true);
         }
 
         /// <summary>
