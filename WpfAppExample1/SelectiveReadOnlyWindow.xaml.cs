@@ -38,30 +38,26 @@ namespace WpfAppExample1
 
         private void InviteCodeButton_TextChanged(object sender, TextChangedEventArgs e)
         {
+            if (string.IsNullOrWhiteSpace(((TextBox) sender).Text)) return;
 
-            if (!string.IsNullOrWhiteSpace(((TextBox) sender).Text))
+            var person = _mockedData.FindPerson(Convert.ToInt32(((TextBox) sender).Text));
+
+            if (person.Id > -1)
             {
-                var person = _mockedData.FindPerson(Convert.ToInt32(((TextBox) sender).Text));
+                // Enabling group enables child controls
+                GroupGrid.IsEnabled = true;
 
-                if (person.Id > -1)
-                {
-                    // Enabling group enables child controls
-                    GroupGrid.IsEnabled = true;
+                // This will automatically select the first control in the tab order
+                MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
 
-                    // This will automatically select the first control in the tab order
-                    MoveFocus(new TraversalRequest(FocusNavigationDirection.Next));
+                FirstNameTextBox.Text = person.FirstName;
+                LastNameTextBox.Text = person.LastName;
 
-                    FirstNameTextBox.Text = person.FirstName;
-                    LastNameTextBox.Text = person.LastName;
-
-                    FirstNameTextBox.Select(person.FirstName.Length, 0);
-                }
-                else
-                {
-                    FirstNameTextBox.Text = "";
-                    LastNameTextBox.Text = "";
-                    GroupGrid.IsEnabled = false;
-                }
+                FirstNameTextBox.Select(person.FirstName.Length, 0);
+            }
+            else
+            {
+                GroupGrid.IsEnabled = false;
             }
         }
     }
