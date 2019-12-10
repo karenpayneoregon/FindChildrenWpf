@@ -72,6 +72,7 @@
     <Compile Include="Classes\NewUsers.cs" />
     <Compile Include="Classes\NumberOnlyBehaviour.cs" />
     <Compile Include="Classes\Person.cs" />
+    <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RadioButtonWindow.xaml.cs">
       <DependentUpon>RadioButtonWindow.xaml</DependentUpon>
     </Compile>
