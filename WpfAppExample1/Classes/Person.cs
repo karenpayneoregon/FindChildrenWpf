@@ -62,6 +62,7 @@ namespace WpfAppExample1.Classes
 }
 /*
  * ICollectionView
+ * https://docs.microsoft.com/en-us/dotnet/api/system.windows.data.collectionview.movecurrentto?view=netframework-4.8
  *
  *
  * DataGrid
