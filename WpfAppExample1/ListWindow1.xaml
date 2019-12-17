@@ -6,28 +6,60 @@
         xmlns:local="clr-namespace:WpfAppExample1"
         xmlns:classes="clr-namespace:WpfAppExample1.Classes"
         mc:Ignorable="d"
-        Title="ListWindow1" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+        Title="ListWindow1" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        d:DataContext="{d:DesignData }"> 
 
     <Window.Resources>
         <classes:TaskItem x:Key="TaskItemsList"/>
-        <DataTemplate x:Key="MyTaskTemplate">
-            <StackPanel>
-                <TextBlock Text="{Binding Path=TaskName}" />
 
-                <TextBlock Text="{Binding Path=Description}"/>
-                <TextBlock Text="{Binding Path=Priority}"/>
-            </StackPanel>
+        <!--A Style that affects all TextBlocks-->
+        <Style TargetType="TextBlock">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Comic Sans MS"/>
+            <Setter Property="FontSize" Value="14"/>
+        </Style>
+
+        <DataTemplate x:Key="MyTaskTemplate" DataType="classes:TaskItem">
+
+            <Border Name="border" BorderBrush="Aqua" BorderThickness="1" Padding="5" Margin="5">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Grid.Row="0" Grid.Column="0" Text="Task Name:"/>
+                    <TextBlock Grid.Row="0" Grid.Column="1" Text="{Binding Path=TaskName}" />
+
+                    <TextBlock Grid.Row="1" Grid.Column="0" Text="Description:"/>
+                    <TextBlock Grid.Row="1" Grid.Column="1" Text="{Binding Path=Description}"/>
+
+                    <TextBlock Grid.Row="2" Grid.Column="0" Text="Priority:"/>
+                    <TextBlock Grid.Row="2" Grid.Column="1" Text="{Binding Path=Priority}"/>
+
+                </Grid>
+            </Border>
+
         </DataTemplate>
+
+
     </Window.Resources>
 
 
     <Grid>
+
         <ListBox 
             HorizontalAlignment="Left" 
             Height="243" 
             Margin="10,10,0,0" 
             VerticalAlignment="Top" 
             Width="671"
+            HorizontalContentAlignment="Stretch"
             ItemTemplate="{StaticResource MyTaskTemplate}"
             ItemsSource="{Binding TaskItemsList}">
 
