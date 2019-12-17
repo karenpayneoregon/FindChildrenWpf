@@ -1,0 +1,25 @@
+﻿<Window x:Class="WpfAppExample1.ListWindow1"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfAppExample1"
+        xmlns:classes="clr-namespace:WpfAppExample1.Classes"
+        mc:Ignorable="d"
+        Title="ListWindow1" Height="450" Width="800" WindowStartupLocation="CenterScreen">
+
+    <Window.Resources>
+        <classes:TaskItem x:Key="TaskItemsList"/>
+    </Window.Resources>
+
+    <Grid>
+        <ListBox 
+            HorizontalAlignment="Left" 
+            Height="243" 
+            Margin="10,10,0,0" 
+            VerticalAlignment="Top" 
+            Width="671"
+            ItemsSource="{Binding Source={StaticResource TaskItemsList}}"/>
+
+    </Grid>
+</Window>

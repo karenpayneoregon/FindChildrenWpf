@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{FFA9C1EF-7525-43BC-A08D-1BF09A8F4DAD}</ProjectGuid>
+    <ProjectGuid>{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>WpfAppExample1</RootNamespace>
-    <AssemblyName>WpfAppExample1</AssemblyName>
+    <RootNamespace>WpfAppStyling</RootNamespace>
+    <AssemblyName>WpfAppStyling</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
@@ -34,19 +34,10 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationManifest>app.manifest</ApplicationManifest>
-  </PropertyGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.Expression.Interactions, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\Microsoft.Expression.Interactions.dll</HintPath>
-    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Windows.Interactivity, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Windows.Interactivity.WPF.2.0.20525\lib\net40\System.Windows.Interactivity.dll</HintPath>
-    </Reference>
     <Reference Include="System.Xml" />
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="System.Core" />
@@ -65,34 +56,6 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="CheckBoxWindow.xaml.cs">
-      <DependentUpon>CheckBoxWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Classes\MockedData.cs" />
-    <Compile Include="Classes\NewUsers.cs" />
-    <Compile Include="Classes\NumberOnlyBehaviour.cs" />
-    <Compile Include="Classes\Person.cs" />
-    <Compile Include="Classes\TaskItem.cs" />
-    <Compile Include="ListWindow1.xaml.cs">
-      <DependentUpon>ListWindow1.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Annotations.cs" />
-    <Compile Include="RadioButtonWindow.xaml.cs">
-      <DependentUpon>RadioButtonWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="SelectiveReadOnlyWindow.xaml.cs">
-      <DependentUpon>SelectiveReadOnlyWindow.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="ViewModel\QuarterViewModel.cs" />
-    <Compile Include="ViewModel\BaseClasses\ViewModelBase.cs" />
-    <Page Include="CheckBoxWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="ListWindow1.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -101,25 +64,12 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Classes\HeaderInfo.cs" />
-    <Compile Include="Classes\TaxRateInfo.cs" />
-    <Compile Include="Controls\CanEnableTextBox.cs" />
-    <Compile Include="Classes\Quarter.cs" />
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="RadioButtonWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="SelectiveReadOnlyWindow.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Model\MainViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -137,8 +87,6 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <None Include="app.manifest" />
-    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -148,16 +96,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ExtensionMethods\ExtensionMethods.csproj">
-      <Project>{5d0a0849-c695-4911-ae88-579a4c3d8750}</Project>
-      <Name>ExtensionMethods</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Extensions\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\Check.png" />
+    <None Include="Aero_Grass.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

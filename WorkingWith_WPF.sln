@@ -18,6 +18,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlExtensions", "Contro
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "WPF", "WPF", "{9BF772A8-0216-4C97-A8AD-2AFAEB0D72BE}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfAppStyling", "WpfAppStyling\WpfAppStyling.csproj", "{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -36,6 +38,10 @@ Global
 		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D6CAD288-04F4-43D1-90E5-AD07CB114E6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A0248D6A-F92E-47BF-BCD2-3EDBE2317F03}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
