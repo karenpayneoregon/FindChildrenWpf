@@ -10,7 +10,16 @@
 
     <Window.Resources>
         <classes:TaskItem x:Key="TaskItemsList"/>
+        <DataTemplate x:Key="MyTaskTemplate">
+            <StackPanel>
+                <TextBlock Text="{Binding Path=TaskName}" />
+
+                <TextBlock Text="{Binding Path=Description}"/>
+                <TextBlock Text="{Binding Path=Priority}"/>
+            </StackPanel>
+        </DataTemplate>
     </Window.Resources>
+
 
     <Grid>
         <ListBox 
@@ -19,7 +28,13 @@
             Margin="10,10,0,0" 
             VerticalAlignment="Top" 
             Width="671"
-            ItemsSource="{Binding Source={StaticResource TaskItemsList}}"/>
+            ItemTemplate="{StaticResource MyTaskTemplate}"
+            ItemsSource="{Binding TaskItemsList}">
+
+        </ListBox>
 
     </Grid>
+
+
+
 </Window>

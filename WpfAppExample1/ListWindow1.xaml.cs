@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,13 +21,15 @@ namespace WpfAppExample1
     /// </summary>
     public partial class ListWindow1 : Window
     {
-        public List<TaskItem> TaskItemsList;
+        
+        public ObservableCollection<TaskItem> TaskItemsList { get; set; }
+
         public ListWindow1()
         {
             InitializeComponent();
-            TaskItemsList = new List<TaskItem>();
-
-            DataContext = TaskItemsList;
+            var ops = new Tasks();
+            TaskItemsList = ops.List();
+            DataContext = this;
         }
     }
 }

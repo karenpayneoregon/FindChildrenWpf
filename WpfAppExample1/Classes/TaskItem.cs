@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace WpfAppExample1.Classes
 {
@@ -21,9 +22,9 @@ namespace WpfAppExample1.Classes
 
     public class Tasks
     {
-        public List<TaskItem> List()
+        public ObservableCollection<TaskItem> List()
         {
-            return new List<TaskItem>()
+            return new ObservableCollection<TaskItem>()
             {
                 new TaskItem() {Priority = 2, TaskType = TaskType.Work, TaskName = "Unit test data operations", Description = "Delegate to junior developer"},
                 new TaskItem() {Priority = 1, TaskType = TaskType.Work, TaskName = "Prototype dashboard", Description = "Put together dashboard prototype"},
