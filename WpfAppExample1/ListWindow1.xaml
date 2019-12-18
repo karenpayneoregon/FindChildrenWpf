@@ -5,8 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfAppExample1"
         xmlns:classes="clr-namespace:WpfAppExample1.Classes"
-        mc:Ignorable="d"
-        Title="ListWindow1" Height="450" Width="800" WindowStartupLocation="CenterScreen"
+        mc:Ignorable="d" 
+        FocusManager.FocusedElement="{Binding ElementName=listBox1}"
+        Title="ListWindow1" Height="386.927" Width="536.792" WindowStartupLocation="CenterScreen"
         d:DataContext="{d:DesignData }">
 
     <Window.Resources>
@@ -42,44 +43,49 @@
 
     </Window.Resources>
 
-    <Grid>
+    <Grid  >
+        <Grid.RowDefinitions>
+            <RowDefinition Height="43*"/>
+            <RowDefinition Height="376*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Grid.RowSpan="2">
+ 
+            <ListBox x:Name="listBox1" 
+                HorizontalAlignment="Left" 
+                Height="262" 
+                Margin="59,57,0,0" 
+                VerticalAlignment="Top" 
+                Width="447"
+                HorizontalContentAlignment="Stretch"
+                IsSynchronizedWithCurrentItem="True"
+                ItemTemplate="{StaticResource MyTaskTemplate}"
+                ItemsSource="{Binding TaskItemsList}">
 
-        <ListBox 
-            HorizontalAlignment="Left" 
-            Height="309" 
-            Margin="59,57,0,0" 
-            VerticalAlignment="Top" 
-            Width="671"
-            HorizontalContentAlignment="Stretch"
-            IsSynchronizedWithCurrentItem="True"
-            ItemTemplate="{StaticResource MyTaskTemplate}"
-            ItemsSource="{Binding TaskItemsList}">
+                <ListBox.ItemContainerStyle>
 
-            <ListBox.ItemContainerStyle>
+                    <Style TargetType="{x:Type ListBoxItem}">
 
-                <Style TargetType="{x:Type ListBoxItem}">
-                    
-                    <Style.Triggers>
-                        
-                        <DataTrigger Binding="{Binding Path=TaskType}" Value="Home">
-                            <Setter Property="Background" Value="LightCyan" />
-                        </DataTrigger>
-                        <DataTrigger Binding="{Binding Path=TaskType}" Value="Work">
-                            <Setter Property="Background" Value="White" />
-                        </DataTrigger>
-                    </Style.Triggers>
-                </Style>
+                        <Style.Triggers>
 
-            </ListBox.ItemContainerStyle>
-        </ListBox>
+                            <DataTrigger Binding="{Binding TaskType}" Value="Home">
+                                <Setter Property="Background" Value="LightCyan" />
+                            </DataTrigger>
+                            <DataTrigger Binding="{Binding TaskType}" Value="Work">
+                                <Setter Property="Background" Value="White" />
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
 
-        <TextBlock  HorizontalAlignment="Center" 
-                    Margin="59,25,0,0" 
+                </ListBox.ItemContainerStyle>
+            </ListBox>
+
+        </StackPanel>
+        <TextBlock Grid.Row="0" HorizontalAlignment="Left" 
+                    Margin="62,8,269,0" 
                     TextWrapping="Wrap" 
                     Text="Styling items in ListBox" 
                     VerticalAlignment="Top" 
                     Width="195" 
                     FontSize="18"/>
-
     </Grid>
 </Window>
