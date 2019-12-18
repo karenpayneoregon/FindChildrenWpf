@@ -76,6 +76,9 @@
     <Compile Include="ListWindow1.xaml.cs">
       <DependentUpon>ListWindow1.xaml</DependentUpon>
     </Compile>
+    <Compile Include="ListWindow2.xaml.cs">
+      <DependentUpon>ListWindow2.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="RadioButtonWindow.xaml.cs">
       <DependentUpon>RadioButtonWindow.xaml</DependentUpon>
@@ -90,6 +93,10 @@
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="ListWindow1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ListWindow2.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
