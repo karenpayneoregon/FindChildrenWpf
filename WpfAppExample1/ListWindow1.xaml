@@ -6,9 +6,11 @@
         xmlns:local="clr-namespace:WpfAppExample1"
         xmlns:classes="clr-namespace:WpfAppExample1.Classes"
         mc:Ignorable="d" 
-        FocusManager.FocusedElement="{Binding ElementName=listBox1}"
-        Title="ListWindow1" Height="386.927" Width="508.894" WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignData }" ResizeMode="NoResize">
+        classes:FocusBehavior.GiveInitialFocus="True"
+        Title="ListWindow1" Height="386.927" Width="508.894" 
+        WindowStartupLocation="CenterScreen"
+        d:DataContext="{d:DesignData }" 
+        ResizeMode="NoResize">
 
 
     <Window.Resources>

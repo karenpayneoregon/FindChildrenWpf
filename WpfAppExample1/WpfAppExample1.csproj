@@ -68,6 +68,7 @@
     <Compile Include="CheckBoxWindow.xaml.cs">
       <DependentUpon>CheckBoxWindow.xaml</DependentUpon>
     </Compile>
+    <Compile Include="Classes\FocusBehavior.cs" />
     <Compile Include="Classes\MockedData.cs" />
     <Compile Include="Classes\NewUsers.cs" />
     <Compile Include="Classes\NumberOnlyBehaviour.cs" />
