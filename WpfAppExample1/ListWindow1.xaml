@@ -7,21 +7,14 @@
         xmlns:classes="clr-namespace:WpfAppExample1.Classes"
         mc:Ignorable="d"
         Title="ListWindow1" Height="450" Width="800" WindowStartupLocation="CenterScreen"
-        d:DataContext="{d:DesignData }"> 
+        d:DataContext="{d:DesignData }">
 
     <Window.Resources>
         <classes:TaskItem x:Key="TaskItemsList"/>
 
-        <!--A Style that affects all TextBlocks-->
-        <Style TargetType="TextBlock">
-            <Setter Property="HorizontalAlignment" Value="Center" />
-            <Setter Property="FontFamily" Value="Comic Sans MS"/>
-            <Setter Property="FontSize" Value="14"/>
-        </Style>
-
         <DataTemplate x:Key="MyTaskTemplate" DataType="classes:TaskItem">
 
-            <Border Name="border" BorderBrush="Aqua" BorderThickness="1" Padding="5" Margin="5">
+            <Border Name="border" BorderBrush="LightGray" BorderThickness="1" Padding="2" Margin="2">
                 <Grid>
                     <Grid.RowDefinitions>
                         <RowDefinition/>
@@ -47,26 +40,42 @@
 
         </DataTemplate>
 
-
     </Window.Resources>
-
 
     <Grid>
 
         <ListBox 
             HorizontalAlignment="Left" 
-            Height="243" 
-            Margin="10,10,0,0" 
+            Height="309" 
+            Margin="59,57,0,0" 
             VerticalAlignment="Top" 
             Width="671"
             HorizontalContentAlignment="Stretch"
+            IsSynchronizedWithCurrentItem="True"
             ItemTemplate="{StaticResource MyTaskTemplate}"
             ItemsSource="{Binding TaskItemsList}">
 
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="{x:Type ListBoxItem}">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Path=TaskType}" Value="Home">
+                            <Setter Property="Background" Value="LightCyan" />
+                        </DataTrigger>
+                        <DataTrigger Binding="{Binding Path=TaskType}" Value="Work">
+                            <Setter Property="Background" Value="White" />
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
 
+        <TextBlock  HorizontalAlignment="Center" 
+                    Margin="59,25,0,0" 
+                    TextWrapping="Wrap" 
+                    Text="Styling items in ListBox" 
+                    VerticalAlignment="Top" 
+                    Width="195" 
+                    FontSize="18"/>
+
     </Grid>
-
-
-
 </Window>
