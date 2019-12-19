@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
@@ -25,9 +26,22 @@ namespace WpfAppExample1
         public ListWindow1()
         {
             InitializeComponent();
-            var ops = new Tasks();
-            TaskItemsList = ops.List();
+
+            var taskOperations = new Tasks();
+            TaskItemsList = taskOperations.List();
+
             DataContext = this;
+        }
+
+        private void UpdateButtonClick(object sender, RoutedEventArgs e)
+        {
+            if (TaskListBox.SelectedItems.Count != 1) return;
+
+            var currentTask = TaskListBox.SelectedItems[0] as TaskItem;
+
+            TaskItemsList.FirstOrDefault(
+                ti => ti.TaskName == currentTask.TaskName).Description = "Changed";
+
         }
     }
 }

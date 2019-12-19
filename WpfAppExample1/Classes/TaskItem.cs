@@ -1,5 +1,7 @@
 ﻿using System.Collections.Generic;
-using System.Collections.ObjectModel;
+using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using JetBrains.Annotations;
 
 namespace WpfAppExample1.Classes
 {
@@ -8,29 +10,58 @@ namespace WpfAppExample1.Classes
         Home,
         Work 
     }
-    public class TaskItem
+    public class TaskItem : INotifyPropertyChanged
     {
-        public string TaskName { get; set; }
-        public string Description { get; set; }
+        private string _description;
+        private string _taskName;
+        private int _priority;
+
+        public string TaskName
+        {
+            get => _taskName;
+            set
+            {
+                if (value == _taskName) return;
+                _taskName = value;
+                OnPropertyChanged();
+            }
+        }
+
+        public string Description 
+        {
+            get => _description;
+            set
+            {
+                if (value == _description) return;
+                _description = value;
+                OnPropertyChanged();
+            }
+        }
+        
         public TaskType TaskType { get; set; }
-        public int Priority { get; set; } 
+
+        public int Priority
+        {
+            get => _priority;
+            set
+            {
+                if (value == _priority) return;
+                _priority = value;
+                OnPropertyChanged();
+            }
+        }
+
         public override string ToString()
         {
             return TaskName;
         }
-    }
 
-    public class Tasks
-    {
-        public ObservableCollection<TaskItem> List()
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        [NotifyPropertyChangedInvocator]
+        protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            return new ObservableCollection<TaskItem>()
-            {
-                new TaskItem() {Priority = 2, TaskType = TaskType.Work, TaskName = "Unit test data operations", Description = "Delegate to junior developer"},
-                new TaskItem() {Priority = 1, TaskType = TaskType.Work, TaskName = "Prototype dashboard", Description = "Put together dashboard prototype"},
-                new TaskItem() {Priority = 1, TaskType = TaskType.Home, TaskName = "Cook dinner", Description = "Ah, get a pizza"},
-                new TaskItem() {Priority = 3, TaskType = TaskType.Work, TaskName = "Single signon discussion", Description = "Discuss options"}
-            };
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }
